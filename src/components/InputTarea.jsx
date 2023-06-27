@@ -1,10 +1,19 @@
 
 const InputTarea = ({ tarea, setTarea }) => {
-    console.log(tarea)
+
     return (  
         <div className="input-tarea">
-            <input type="text" placeholder="Ingresa el nombre de la tarea ..."/>
-            <input type="submit" value="+ Agregar tarea"/>
+            <input
+                name="todo"
+                type="text" 
+                placeholder="Ingresa el nombre de la tarea ..."
+                onChange={ e => setTarea({...tarea, [e.target.name]: e.target.value })}
+                value={ tarea.todo }
+            />
+            <input 
+                type="submit" 
+                value="+ Agregar tarea"
+            />
         </div>
     );
 }
