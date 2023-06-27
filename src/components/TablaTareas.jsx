@@ -1,5 +1,5 @@
 import { formatearFecha } from '../helpers/formatearFecha'
-const TablaTareas = ({ tareas }) => {
+const TablaTareas = ({ tareas, eliminarTareas, completarTarea }) => {
     return ( 
         <div className="fondo-blanco">
             <div className="encabezado-tareas">
@@ -20,18 +20,22 @@ const TablaTareas = ({ tareas }) => {
                     {tareas.map( tarea => (
                             <tr key={ tarea.id }>
                                 <td>{ tarea.todo }</td>
-                                <td>{ tarea.completada ? 'si' : 'no' }</td>
+                                <td>{ tarea.completada ? <p className="completada">Si</p> : <p className="no-completada">No</p> }</td>
                                 <td>{ formatearFecha(tarea.fecha) }</td>
                                 <td>
                                     <button className="boton-accion">
                                         <span className="material-icons">edit</span>
                                     </button>
 
-                                    <button className="boton-accion">
+                                    <button
+                                        onClick={ ()=> eliminarTareas(tarea.id) } 
+                                        className="boton-accion">
                                         <span className="material-icons">delete</span>
                                     </button>
 
-                                    <button className="boton-accion">
+                                    <button
+                                        onClick={ ()=> completarTarea(tarea) } 
+                                        className="boton-accion">
                                         <span className="material-icons">check_circle</span>
                                     </button>
                                 </td>

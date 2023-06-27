@@ -40,6 +40,14 @@
 
     }
 }
+.completada {
+    color: $oscuroClaro;
+    font-weight: bold;
+}
+.no-completada {
+    color: $rojo;
+    font-weight: bold;
+}
 .boton-accion {
     border: none;
     background-color: unset;

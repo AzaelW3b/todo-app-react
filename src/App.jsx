@@ -19,6 +19,35 @@ const [tareas, setTareas] = useState([])
     obtenerTareas()
   },[])
 
+  const eliminarTareas = async (id) => {
+    try {
+      // en la base de datos
+      await api.delete(`/tareas/${ id }`)
+      // en el estado
+      setTareas(
+        tareas.filter(tarea => tarea.id !== id)
+      )
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const completarTarea = async (tarea) => {
+    try {
+      const tareaTerminada = { ...tarea }
+      tareaTerminada.completada = !tareaTerminada.completada
+      await api.put(`/tareas/${tarea.id}`, tareaTerminada)
+      const indiceTarea = tareas.map(tareaIndex => tareaIndex.id).indexOf(tarea.id)
+      setTareas([
+        ...tareas.slice(0, indiceTarea),
+        tareaTerminada,
+        ...tareas.slice(indiceTarea + 1)
+      ])
+     
+    } catch (error) {
+      console.log(error)
+    }
+  };
   return (
     <div className="contenedor contenedor-formulario">
       <FormularioTarea
@@ -31,6 +60,8 @@ const [tareas, setTareas] = useState([])
           
           <TablaTareas
             tareas={tareas}
+            eliminarTareas={eliminarTareas}
+            completarTarea={completarTarea}
           />
       }
     </div>

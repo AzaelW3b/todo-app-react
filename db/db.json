@@ -1,34 +1,28 @@
 {
   "tareas": [
     {
-      "id": "RmSM664Cox",
-      "todo": "Lavar la ropa",
+      "id": "i49shxo2Tx",
+      "todo": "terminar este tutorial",
       "completada": false,
-      "fecha": 1687852402064
+      "fecha": 1687855017812
     },
     {
-      "id": "6Hjdu0h",
-      "todo": "Hacer mis pagos",
+      "id": "1-0Rtar",
+      "todo": "Terminar mi curso de capacitación",
       "completada": false,
-      "fecha": 1687852412016
+      "fecha": 1687855039547
     },
     {
-      "id": "THR84km",
-      "todo": "terminar",
-      "completada": false,
-      "fecha": 1687852416072
+      "id": "CUyYaTU",
+      "todo": "Leer dos libros",
+      "completada": true,
+      "fecha": 1687855053843
     },
     {
-      "id": "XMDRwEH",
-      "todo": "que rico joder",
-      "completada": false,
-      "fecha": 1687852421850
-    },
-    {
-      "id": "qPhw5Sq",
-      "todo": "Que bueno soy",
-      "completada": false,
-      "fecha": 1687852424911
+      "id": "0HtB2dw",
+      "todo": "Dejar de subir videos cada dos años.",
+      "completada": true,
+      "fecha": 1687855058938
     }
   ]
 }
