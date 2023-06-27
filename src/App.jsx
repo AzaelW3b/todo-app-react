@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import FormularioTarea from './components/FormularioTarea'
+import TablaTareas from './components/TablaTareas'
 import api from './api/axios'
 
 const App = () => {
@@ -24,6 +25,14 @@ const [tareas, setTareas] = useState([])
         setTareas={setTareas}
         tareas={tareas}
       />
+      {
+        tareas.length === 0 ? 
+          <div className="mensaje-tareas">No hay tareas.</div> : 
+          
+          <TablaTareas
+            tareas={tareas}
+          />
+      }
     </div>
   )
 }

@@ -8,7 +8,7 @@ const InputTarea = ({ tarea, setTarea }) => {
                 type="text" 
                 placeholder="Ingresa el nombre de la tarea ..."
                 onChange={ e => setTarea({...tarea, [e.target.name]: e.target.value })}
-                value={ tarea.todo }
+                value={tarea.todo}
             />
             <input 
                 type="submit" 
