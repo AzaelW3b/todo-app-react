@@ -4,9 +4,9 @@ import MensajeError from './MensajeError'
 import InputTarea from './InputTarea'
 import api from '../api/axios'
 
-const FormularioTarea = ({ setTareas, tareas, setTarea, tarea, esNuevoRegistro, setEsNuevoRegistro, editarTarea }) => {
+const FormularioTarea = ({ setTareas, tareas, setTarea, tarea, esNuevoRegistro, editarTarea, tareasPendientes }) => {
     const [error, setError] = useState(false)
-  
+
     const { todo } = tarea
     // guardar tarea
     const handleSubmit = async e => {
@@ -47,7 +47,9 @@ const FormularioTarea = ({ setTareas, tareas, setTarea, tarea, esNuevoRegistro, 
         <form 
             onSubmit={handleSubmit}
             className="formulario-tarea">
-            <EncabezadoFormulario/>
+            <EncabezadoFormulario
+                tareasPendientes={tareasPendientes}
+            />
             <InputTarea
                 tarea={tarea}
                 setTarea={setTarea}

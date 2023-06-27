@@ -1,4 +1,4 @@
-const EncabezadoFormulario = () => {
+const EncabezadoFormulario = ({ tareasPendientes }) => {
 
     const fechaHoy = new Date()
     const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
@@ -12,7 +12,7 @@ const EncabezadoFormulario = () => {
                 </p>
             </div>
             <div className="cantidad-pendientes-encabezado">
-                <p><strong>{'13'}</strong> tareas pendientes</p>
+                <p><strong>{ tareasPendientes }</strong> tareas pendientes</p>
             </div>
         </div>
     );
