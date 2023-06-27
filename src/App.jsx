@@ -1,11 +1,14 @@
+import FormularioTarea from './components/FormularioTarea'
 
-function App() {
+const App = () => {
+// const [tareas, setTareas] = useState([])
 
   return (
-    <>
-      <h1>Hola mundo</h1>
-    </>
+    <div className="contenedor contenedor-formulario">
+      <FormularioTarea/>
+    </div>
   )
 }
 
 export default App
+

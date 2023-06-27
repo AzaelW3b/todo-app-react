@@ -1,0 +1,28 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $fuente;
+    font-size: 1.6rem;
+    background-color: $oscuro;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}
+
+
+p {
+    font-size: 1.8rem;
+    @include adaptar( 768px ) {
+        font-size: 2rem;
+    }
+}

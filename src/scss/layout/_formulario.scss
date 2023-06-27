@@ -1,0 +1,53 @@
+.contenedor-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.formulario-tarea {
+    background-color: $blanco;
+    padding: 5rem;
+    width: 100%;
+}
+
+.fecha-encabezado {
+    p {
+        color: $rojo;
+        font-weight: bold;
+    }
+    span {
+        font-weight: normal;
+    }
+}
+.cantidad-pendientes-encabezado {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-tarea {
+    input {
+        display: block;
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 2rem;
+        outline: none;
+        &:first-child {
+            margin-bottom: 2rem;
+            border: none;
+        }
+        &[type="submit"]{
+            background-color: $oscuroClaro;
+            color: $blanco;
+            font-weight: bold;
+            border: none;
+            transition: background-color .3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $rojoOscuro;
+            }
+        } 
+    }
+}
