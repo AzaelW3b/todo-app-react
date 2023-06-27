@@ -2,17 +2,11 @@ import { useState } from 'react'
 import EncabezadoFormulario from './EncabezadoFormulario'
 import MensajeError from './MensajeError'
 import InputTarea from './InputTarea'
-import shortid from 'shortid'
 import api from '../api/axios'
 
-const FormularioTarea = ({ setTareas, tareas }) => {
+const FormularioTarea = ({ setTareas, tareas, setTarea, tarea, esNuevoRegistro, setEsNuevoRegistro, editarTarea }) => {
     const [error, setError] = useState(false)
-    const [tarea, setTarea] = useState({
-        id: shortid.generate(),
-        todo: '',
-        completada: false,
-        fecha: Date.now()
-    })
+  
     const { todo } = tarea
     // guardar tarea
     const handleSubmit = async e => {
@@ -23,17 +17,26 @@ const FormularioTarea = ({ setTareas, tareas }) => {
             return
         } 
         try {
-            const { data } = await api.post('/tareas', tarea)
-            console.log(data)
-            setTareas([...tareas, data])
-            // limpiar estado
-            setError(false)
-            setTarea({
-                id: '',
-                todo: '',
-                completada: false,
-                fecha: Date.now()
-            })
+           if(esNuevoRegistro) {
+                const { data } = await api.post('/tareas', tarea)
+                setTareas([...tareas, data])
+                // limpiar estado
+                setError(false)
+                setTarea({
+                    id: '',
+                    todo: '',
+                    completada: false,
+                    fecha: Date.now()
+                })
+           }else {
+                editarTarea(tarea)
+                setTarea({
+                    id: '',
+                    todo: '',
+                    completada: false,
+                    fecha: Date.now()
+                })
+           }
 
         } catch (error) {
             console.log(error)
@@ -48,6 +51,7 @@ const FormularioTarea = ({ setTareas, tareas }) => {
             <InputTarea
                 tarea={tarea}
                 setTarea={setTarea}
+                esNuevoRegistro={esNuevoRegistro}
             />
             {
                 error ? <MensajeError mensaje="Error, debes ingresar una tarea."/> : null

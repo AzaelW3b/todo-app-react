@@ -1,5 +1,5 @@
 
-const InputTarea = ({ tarea, setTarea }) => {
+const InputTarea = ({ tarea, setTarea, esNuevoRegistro }) => {
 
     return (  
         <div className="input-tarea">
@@ -12,7 +12,7 @@ const InputTarea = ({ tarea, setTarea }) => {
             />
             <input 
                 type="submit" 
-                value="+ Agregar tarea"
+                value={esNuevoRegistro ? 'Agregar tarea' : 'Editar Tarea'}
             />
         </div>
     );
