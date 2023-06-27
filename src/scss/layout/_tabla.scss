@@ -1,21 +1,4 @@
-.encabezado-tareas {
-    button {
-        border: none;
-        color: $rojoOscuro;
-        background-color: $blanco;
-        border: 1px solid $rojoOscuro;
-        padding: 1rem 3rem;
-        margin-left: .5rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
-        transition: all .3s ease-in-out;
-        &:hover {
-            cursor: pointer;
-            background-color: $rojoOscuro;
-            color: $blanco;
-        }
-    }
-}
+
 .tabla-tareas {
     width: 100%;
     border-collapse: collapse;

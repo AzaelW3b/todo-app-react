@@ -77,6 +77,7 @@ const [esNuevoRegistro, setEsNuevoRegistro] = useState(true)
     }
   }
   const tareasPendientes = tareas.filter(tarea => !tarea.completada)?.length
+ 
   return (
     <div className="contenedor contenedor-formulario">
       <FormularioTarea
@@ -98,6 +99,7 @@ const [esNuevoRegistro, setEsNuevoRegistro] = useState(true)
             eliminarTareas={eliminarTareas}
             completarTarea={completarTarea}
             buscarTareaId={buscarTareaId}
+           
           />
       }
     </div>

@@ -2,14 +2,14 @@
   "tareas": [
     {
       "id": "i49shxo2Tx",
-      "todo": "terminar este tutorial1222",
-      "completada": false,
+      "todo": "terminar este tutorial",
+      "completada": true,
       "fecha": 1687855017812
     },
     {
       "id": "1-0Rtar",
       "todo": "Terminar mi curso de capacitación",
-      "completada": true,
+      "completada": false,
       "fecha": 1687855039547
     },
     {
@@ -19,10 +19,16 @@
       "fecha": 1687855053843
     },
     {
-      "id": "0HtB2dw",
-      "todo": "Dejar de subir videos cada dos años.",
+      "id": "yxg4Nvitei",
+      "todo": "Estudiar Ingles",
       "completada": true,
-      "fecha": 1687855058938
+      "fecha": 1687906135257
+    },
+    {
+      "id": "yHz6gyH",
+      "todo": "Tender la cama",
+      "completada": false,
+      "fecha": 1687906150378
     }
   ]
 }

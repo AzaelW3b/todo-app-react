@@ -1,12 +1,10 @@
 import { formatearFecha } from '../helpers/formatearFecha'
-const TablaTareas = ({ tareas, eliminarTareas, completarTarea, buscarTareaId }) => {
+const TablaTareas = ({ tareas, eliminarTareas, completarTarea, buscarTareaId, tareasCompletas, tareasIncompletas, todasTareas }) => {
+
+  
     return ( 
         <div className="fondo-blanco">
-            <div className="encabezado-tareas">
-                <button>Todas</button>
-                <button>Completas</button>
-                <button>Incompletas</button>
-            </div>
+        
             <table className="tabla-tareas">
                 <thead>
                     <tr>
